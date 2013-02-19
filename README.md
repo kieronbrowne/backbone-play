@@ -7,6 +7,7 @@ Installation
 ---------------
 
 Clone repo then 
+
     npm install
 
 To run
