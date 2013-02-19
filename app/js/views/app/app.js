@@ -10,7 +10,6 @@ function(appTemplate) {
 
 		render: function() {
 			this.$el.html(this.template({name: this.model.get('name')}));
-			console.log(this.model.get('name'));
 			return this;
 		},
 
