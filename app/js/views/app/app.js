@@ -1,4 +1,7 @@
-define(['text!templates/app/app.html'],
+define(
+[
+'text!templates/app/app.html'
+],
 function(appTemplate) {
 	var AppView = Backbone.View.extend({
 		className: "main",
@@ -6,8 +9,13 @@ function(appTemplate) {
 		template: _.template(appTemplate),
 
 		render: function() {
-			this.$el.html(this.template({name: 'World!'}));
+			this.$el.html(this.template({name: this.model.get('name')}));
+			console.log(this.model.get('name'));
 			return this;
+		},
+
+		initialize: function() {
+			this.listenTo(this.model, 'change', this.render);
 		}
 	});
 
