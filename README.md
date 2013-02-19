@@ -7,9 +7,8 @@ Installation
 ---------------
 
 Clone repo then 
-  npm install
+    npm install
 
 To run
 ------------
-
-npm start
+    npm start
