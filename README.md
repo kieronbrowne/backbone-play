@@ -13,3 +13,5 @@ Clone repo then
 To run
 ------------
     npm start
+
+and visit <http://localhost:8000> in your browser
