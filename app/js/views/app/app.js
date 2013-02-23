@@ -22,7 +22,7 @@ function(appTemplate) {
 		},
 
 		changeName: function() {
-			var name = $('#name').val();
+			var name = this.$('#name').val();
 			this.model.increment();
 			this.model.set({name: name});
 		}
