@@ -9,11 +9,11 @@ function(appTemplate) {
 		template: _.template(appTemplate),
 	
 		events: {
-			"click #changeName":	"changeName"
+			"submit form":	"changeName"
 		},
 
 		render: function() {
-			this.$el.html(this.template({name: this.model.get('name')}));
+			this.$el.html(this.template(this.model.attributes));
 			return this;
 		},
 
@@ -22,7 +22,9 @@ function(appTemplate) {
 		},
 
 		changeName: function() {
+			var name = $('#name').val();
 			this.model.increment();
+			this.model.set({name: name});
 		}
 	});
 

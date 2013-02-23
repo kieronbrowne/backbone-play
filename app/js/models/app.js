@@ -3,11 +3,14 @@ define(
 
 function() {
 	var AppModel = Backbone.Model.extend({
-		name: 'Not set',
-		counter: 0,
-
+	
+		initialize: function() {
+			this.set({name: 'World!', counter: 0});
+		},
+		
 		increment: function() {
-			this.set('name', this.counter++);
+			var c = this.get('counter');
+			this.set({'counter': ++c}, {silent: true});
 		}
 	});
 

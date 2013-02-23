@@ -21,9 +21,5 @@ requirejs.config({
 });
 
 require(['app'], function(App) {
-	window.play = new App();	
-
-	window.setTimeout(function() {
-		window.play.models.appModel.set({name: 'Kieron'});
-	}, 2000);
+	window.play = new App();
 });
