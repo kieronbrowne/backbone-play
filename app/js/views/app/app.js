@@ -18,13 +18,24 @@ function(appTemplate) {
 		},
 
 		initialize: function() {
-			this.listenTo(this.model, 'change', this.render);
+			this.listenTo(this.model, 'change:name', this.updateName);
+			this.listenTo(this.model, 'change:counter', this.updateCounter);
 		},
 
 		changeName: function() {
 			var name = this.$('#name').val();
+			this.$('#name').val("").focus();
 			this.model.increment();
 			this.model.set({name: name});
+			return false;
+		},
+		
+		updateName: function() {
+			this.$("#h1-name").html(this.model.get('name'));
+		},
+		
+		updateCounter: function() {
+			this.$("#counter").html(this.model.get('counter'));
 		}
 	});
 

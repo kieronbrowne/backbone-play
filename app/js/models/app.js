@@ -10,7 +10,7 @@ function() {
 		
 		increment: function() {
 			var c = this.get('counter');
-			this.set({'counter': ++c}, {silent: true});
+			this.set({'counter': ++c});
 		}
 	});
 
